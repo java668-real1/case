@@ -15,6 +15,7 @@
     <modules>
         <module>janey668-log-starter</module>
         <module>janey668-netty-demo</module>
+        <module>janey668-juc-demo</module>
     </modules>
 
     <properties>
