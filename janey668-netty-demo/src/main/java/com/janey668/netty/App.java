@@ -1,4 +1,4 @@
-package com.janey668;
+package com.janey668.netty;
 
 /**
  * Hello world!
