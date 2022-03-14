@@ -9,6 +9,7 @@ public class TestJoin2 {
 
     static int r = 0;
     static int r1 = 0;
+    static boolean b = false;
     public static void main(String[] args) throws InterruptedException {
         test1();
     }
@@ -27,15 +28,19 @@ public class TestJoin2 {
         Thread t2 = new Thread(() -> {
             log.debug("t2开始");
             try {
-                sleep(100000);
+                sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            log.debug("t2结束");
+            while (b) {
+                log.debug("=======");
+            }
+            log.debug("t2结束:{}", b);
             r1 = 10;
         });
         t1.start();
         t2.start();
+        b = true;
         t1.join();
         t2.join();
         log.debug("结果为:{}", r);
