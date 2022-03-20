@@ -20,6 +20,7 @@ public class GuardedObject {
                     e.printStackTrace();
                 }
             }
+            System.out.println("get notify");
             return response;
         }
     }
@@ -29,6 +30,12 @@ public class GuardedObject {
             // 条件满足，通知等待线程
             this.response = response;
             lock.notifyAll();
+
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -48,7 +55,7 @@ public class GuardedObject {
 
     private static List<String> download() {
         try {
-            Thread.sleep(30000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
