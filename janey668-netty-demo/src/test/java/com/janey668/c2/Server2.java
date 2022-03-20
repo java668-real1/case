@@ -1,4 +1,4 @@
-package com.janey668;
+package com.janey668.c2;
 
 import lombok.extern.slf4j.Slf4j;
 
