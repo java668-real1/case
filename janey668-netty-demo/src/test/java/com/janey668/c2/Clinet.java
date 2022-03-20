@@ -1,4 +1,4 @@
-package com.janey668.c2.block;
+package com.janey668.c2;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
