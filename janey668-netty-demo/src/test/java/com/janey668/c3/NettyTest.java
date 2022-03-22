@@ -1,8 +1,11 @@
 package com.janey668.c3;
 
 import io.netty.channel.DefaultEventLoopGroup;
+import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.util.concurrent.EventExecutor;
 import org.junit.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class NettyTest {
 
@@ -29,6 +32,18 @@ public class NettyTest {
         System.out.println(group.next());
         System.out.println(group.next());
         System.out.println(group.next());
+    }
+
+//    @Test
+    public static void testEventLoopGroup3() {
+        NioEventLoopGroup group = new NioEventLoopGroup();
+        group.scheduleAtFixedRate(() -> {
+            System.out.println(111111111);
+        }, 1, 10, TimeUnit.SECONDS);
+    }
+
+    public static void main(String[] args) {
+        testEventLoopGroup3();
     }
 
 }
