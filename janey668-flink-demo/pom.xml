@@ -5,25 +5,30 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.janey668</groupId>
-    <artifactId>case</artifactId>
+    <artifactId>janey668-flink-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>case</name>
-    <packaging>pom</packaging>
-    <url>http://www.janey668.com</url>
-
-    <modules>
-        <module>janey668-log-starter</module>
-        <module>janey668-netty-demo</module>
-        <module>janey668-juc-demo</module>
-        <module>janey668-flink-demo</module>
-    </modules>
+    <name>janey668-flink-demo</name>
+    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-java</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-java_2.12</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
