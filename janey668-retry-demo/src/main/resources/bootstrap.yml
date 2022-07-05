@@ -1,0 +1,13 @@
+server:
+  port: 8090
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: https://dev-nacos.afanticar.net
+        file-extension: yaml
+        max-retry: 3
+        namespace: 09c8e0f2-6c67-4cd4-b167-5883a98a7a4f
+        extension-configs:
+          - data-id: content-dynamic-thread-pool.yml
