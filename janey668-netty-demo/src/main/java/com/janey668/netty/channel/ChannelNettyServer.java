@@ -12,7 +12,9 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class ChannelNettyServer {
 
     public static void main(String[] args) {
@@ -30,9 +32,15 @@ public class ChannelNettyServer {
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
                                 System.out.println(msg);
                                 String message = "服务器接收了：" + msg;
-                                ByteBuf buffer = ByteBufAllocator.DEFAULT.buffer();
-                                buffer.writeBytes(message.getBytes());
-                                ctx.channel().writeAndFlush(buffer);
+                                ChannelFuture channelFuture = ctx.channel().writeAndFlush(message);
+                                channelFuture.addListener((p) -> {
+                                    if (!p.isSuccess()) {
+                                        log.error("发送消息报错了：", p.cause());
+                                    }
+                                });
+//                                ByteBuf buffer = ByteBufAllocator.DEFAULT.buffer();
+//                                buffer.writeBytes(message.getBytes());
+//                                ctx.channel().writeAndFlush(buffer);
                             }
                         });
 //                        pipeline.addLast(new StringEncoder());

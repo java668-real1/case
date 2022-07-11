@@ -3,6 +3,7 @@ package com.janey668.netty.bytebuf;
 import com.janey668.netty.util.ByteBufUtil;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
+import io.netty.handler.codec.FixedLengthFrameDecoder;
 
 public class SliceTest {
 
@@ -20,7 +21,6 @@ public class SliceTest {
         ByteBufUtil.log(b3);
         b3.writeBytes(new byte[] {1});
         ByteBufUtil.log(b3);
-
 
     }
 
