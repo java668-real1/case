@@ -1,4 +1,4 @@
-package com.janey668.janey668protobufdemo;
+package com.janey668.protobuf;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

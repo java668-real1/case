@@ -1,4 +1,4 @@
-package com.janey668.janey668protobufdemo;
+package com.janey668.protobuf;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

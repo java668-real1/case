@@ -5,7 +5,7 @@ syntax = "proto3";
 package com.wxw.notes.protobuf.proto;
 
 //生成 proto 文件所在包路径
-option java_package = "com.wxw.notes.protobuf.proto";
+option java_package = "com.janey668.protobuf.proto";
 
 //生成 proto 文件名
 option java_outer_classname="DemoProto";
