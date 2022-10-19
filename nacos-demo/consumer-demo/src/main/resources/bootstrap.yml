@@ -1,2 +1,11 @@
 server:
   prot: 8080
+spring:
+  application:
+    name: consumer-demo
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://console.nacos.io
+      config:
+        server-addr: http://console.nacos.io
