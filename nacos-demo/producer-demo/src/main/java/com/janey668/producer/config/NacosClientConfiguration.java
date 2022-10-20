@@ -3,6 +3,7 @@ package com.janey668.producer.config;
 import com.alibaba.cloud.nacos.ConditionalOnNacosDiscoveryEnabled;
 import com.alibaba.cloud.nacos.NacosDiscoveryProperties;
 import com.alibaba.cloud.nacos.discovery.NacosWatch;
+import com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration;
 import com.janey668.producer.constant.NacosConstant;
 import com.janey668.producer.properties.NacosWatchProperties;
 import lombok.AllArgsConstructor;
@@ -39,4 +40,5 @@ public class NacosClientConfiguration {
         properties.getMetadata().put(NacosConstant.THREAD_NUM, "nacosWatchProperties.getThreadNum()");
         return new NacosWatch(properties, taskScheduler);
     }
+
 }
